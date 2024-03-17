@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I love you Olivia Ji</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="tenor-gif-embed" data-postid="253027946666209433" data-share-method="host" data-aspect-ratio="1.37853"
+      data-width="100%">
+      <a
+        href="https://tenor.com/view/mochi-cat-mochi-and-goma-goma-and-peach-mochi-mochi-peach-cat-gif-gif-253027946666209433">Mochi
+        Cat GIF</a> from <a href="https://tenor.com/search/mochi-gifs">Mochi GIFs</a>
+    </div>
+    <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    <h1>Hehehehe, I knew it! 😘</h1>
+    <div id="countdownMessage">
+      <h3>Going back to the main page in <span id="countdown">3</span> seconds...</h3>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      let countdownElement = document.getElementById('countdown');
+      let countdownNumber = 3;
+      const countdownFunction = setInterval(() => {
+        countdownNumber--;
+        countdownElement.innerText = countdownNumber;
+        if (countdownNumber <= 0) {
+          clearInterval(countdownFunction);
+          window.location.href = 'index.html'; // Redirect to index.html
+        }
+      }, 1000);
+    });
+  </script>
+</body>
+
+</html>

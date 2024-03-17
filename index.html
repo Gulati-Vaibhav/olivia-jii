@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>I love you Olivia Ji</title>
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div
+        class="tenor-gif-embed"
+        data-postid="22885016"
+        data-share-method="host"
+        data-aspect-ratio="1.04918"
+        data-width="100%"
+      >
+        <a href="https://tenor.com/view/manja-gif-22885016">Manja Sticker</a
+        >from
+        <a href="https://tenor.com/search/manja-stickers">Manja Stickers</a>
+      </div>
+      <script
+        type="text/javascript"
+        async
+        src="https://tenor.com/embed.js"
+      ></script>
+      <h1>Do you love me? Btaao nah Olivia Ji 🤗</h1>
+     
+
+      <div class="btn">
+        <a href="yes.html" id="yesLink">Yes</a>
+        <a href="no1.html">No</a>
+      </div>
+    </div>
+    <script>
+      document.getElementById('yesLink').addEventListener('click', function(e) {
+          // Prevent the default link behavior
+          e.preventDefault();
+      
+          // Fetch call to the Netlify Function
+          fetch('/.netlify/functions/trackClick', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ action: 'yesClicked' }) // Optional: Send data to the server
+          })
+          .then(response => {
+              if(response.ok) {
+                  // Redirect to yes.html after the function successfully executes
+                  window.location.href = 'yes.html';
+              } else {
+                  console.error('Network request for Netlify Function failed with response', response.status, ':', response.statusText);
+              }
+          })
+          .catch(error => console.error('Could not fetch the Netlify Function:', error));
+      });
+      </script>
+      
+  </body>
+</html>
